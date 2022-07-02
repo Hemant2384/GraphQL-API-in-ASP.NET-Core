@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Product.Repository
 {
-    public class ProductReviewRepository
+    public class ProductReviewRepository : IProductReviewRepository
     {
         private readonly ProductContext _dbContext;
 

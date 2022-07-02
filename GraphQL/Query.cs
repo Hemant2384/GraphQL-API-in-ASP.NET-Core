@@ -3,12 +3,13 @@ using Product.Repository;
 using GraphQL;
 using GraphQL.Types;
 using Product.Types;
+using Product.Interfaces;
 
 namespace Product.GraphQL
 {
     public class Query : ObjectGraphType
     {
-        public Query(ProductRepository productRepository, ProductReviewRepository reviewRepository)
+        public Query(IProductRepository productRepository, IProductReviewRepository reviewRepository)
         {
             //specify fields and resolve
             Field<ListGraphType<ProductType>>( //type of field

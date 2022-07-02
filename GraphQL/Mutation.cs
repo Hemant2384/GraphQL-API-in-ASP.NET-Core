@@ -3,12 +3,14 @@ using Product.Repository;
 using GraphQL;
 using GraphQL.Types;
 using Product.Data.Entity;
+using Product.Interfaces;
+
 
 namespace Product.GraphQL
 {
     public class Mutation : ObjectGraphType<ProductReviewInputType>
     {
-        public Mutation(ProductReviewRepository reviewRepository)
+        public Mutation(IProductReviewRepository reviewRepository)
         {
             FieldAsync<ProductReviewType,ProductReview>(
                 "createReview",
